@@ -16,10 +16,20 @@ app.use(express.json());
 
 // Routes
 
-app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'notes.html')));
+app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/notes.html')));
 
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
-
+// App port listening
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+
+
+
+
+
+//API routes 
+// post route to save a note 
+  // ADD the new note to the db.json
+// get route to get all notes
+// put route to update a note (app.put())
